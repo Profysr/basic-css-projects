@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        display: grid;
+        place-content: center;
+        width: 100%;
+        height: 100vh;
+        background: #023e8a;
+      }
+      .container {
+        width: 80vw;
+        min-height: 320px;
+        height: 360px;
+        max-height: 480px;
+        margin: auto;
+        background: white;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: #90e0ef 0px 50px 100px -20px, #caf0f8 0px 30px 60px -30px;
+      }
+      .card-group {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -25%;
+      }
+      .card-group,
+      .card {
+        min-width: 220px;
+        width: 30vw;
+        aspect-ratio: 16/12;
+        border-radius: 1vmin;
+      }
+      .card {
+        background: rgba(0, 0, 0);
+        position: absolute;
+        transition: all 500ms cubic-bezier(0.09, 0.84, 0.3, 0.92);
+
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .card {
+        translate: calc(var(--hover-translate-x) * 1%)
+          calc(var(--hover-translate-y) * 1%);
+        rotate: calc(var(--hover-rotate) * 1deg);
+        padding: 12px;
+      }
+      .card-group:hover .card {
+        translate: calc(var(--hover-translate-x) * 1.15%)
+          calc(var(--hover-translate-y) * 1.15%);
+        rotate: calc(var(--hover-rotate) * 1.15deg);
+      }
+
+      /* Card Data Styling */
+      .container-top {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+      }
+      .container-top h4 {
+        color: #023e8a;
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: capitalize;
+      }
+      .container-top p {
+        font-size: 16px;
+        color: rgb(51, 47, 47);
+        text-transform: lowercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-top">
+        <h4>Select</h4>
+        <p>It one of my best selection</p>
+      </div>
+      <div class="card-group">
+        <div
+          class="card"
+          style="
+            --hover-translate-x: -65;
+            --hover-translate-y: 15;
+            --hover-rotate: -15;
+            --color: red;
+            z-index: 1;
+          "
+        >
+          <img
+            src="https://www.sliderrevolution.com/wp-content/uploads/2021/11/creative-header.png"
+            alt="webiste design image"
+          />
+        </div>
+
+        <div
+          class="card"
+          style="
+            --hover-translate-x: -45;
+            --hover-translate-y: 10;
+            --hover-rotate: -5;
+            --color: purple;
+            z-index: 2;
+          "
+        >
+          <img
+            src="https://www.sliderrevolution.com/wp-content/uploads/2021/11/creative-header.png"
+            alt="webiste design image"
+          />
+        </div>
+
+        <div
+          class="card"
+          style="
+            --hover-translate-x: 0;
+            --hover-translate-y: 0;
+            --hover-rotate: 0;
+            --color: cyan;
+            z-index: 3;
+          "
+        >
+          <img
+            src="https://www.sliderrevolution.com/wp-content/uploads/2021/11/creative-header.png"
+            alt="webiste design image"
+          />
+        </div>
+
+        <div
+          class="card"
+          style="
+            --hover-translate-x: 45;
+            --hover-translate-y: 10;
+            --hover-rotate: 5;
+            --color: yellowgreen;
+            z-index: 2;
+          "
+        >
+          <img
+            src="https://www.sliderrevolution.com/wp-content/uploads/2021/11/creative-header.png"
+            alt="webiste design image"
+          />
+        </div>
+        <div
+          class="card"
+          style="
+            --hover-translate-x: 65;
+            --hover-translate-y: 15;
+            --hover-rotate: 15;
+            --color: black;
+            z-index: 1;
+          "
+        >
+          <img
+            src="https://www.sliderrevolution.com/wp-content/uploads/2021/11/creative-header.png"
+            alt="webiste design image"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

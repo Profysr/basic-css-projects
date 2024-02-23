@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Viewport Units</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --widthToSet: 60;
+      }
+      body {
+        display: grid;
+        place-content: center;
+        width: 100vw;
+        height: 100vh;
+        background: #bc6c25;
+      }
+      .container {
+        width: 80vw;
+        margin: auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: #dda15e 0px 1px 1px 0px inset, #dda15e 0px 50px 100px -20px,
+          #bc6c25 0px 30px 60px -30px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+      }
+      .container > div {
+        width: 100%;
+        background: #fefae0;
+        padding: 5px 0;
+        border-radius: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+      .container > div p {
+        position: relative;
+        color: brown;
+        font-weight: 600;
+        text-transform: capitalize;
+        text-align: right;
+        z-index: 9;
+      }
+      .container > div::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        padding: 5px 0;
+        border-radius: 30px;
+        background: #bc6c25;
+      }
+      .container > div.percentage::before {
+        width: calc(var(--widthToSet) * 1%);
+      }
+      .container > div.vw::before {
+        width: calc(var(--widthToSet) * 1vw);
+      }
+      .container > div.dvw::before {
+        width: calc(var(--widthToSet) * 1dvw);
+      }
+      .container > div.dvb::before {
+        width: calc(var(--widthToSet) * 1dvb);
+      }
+      .container > div.dvi::before {
+        width: calc(var(--widthToSet) * 1dvi);
+      }
+      .container > div.vmin::before {
+        width: calc(var(--widthToSet) * 1vmin);
+      }
+      .container > div.vmax::before {
+        width: calc(var(--widthToSet) * 1vmax);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="css-unit percentage" data-definition="css-unit vmin">
+        <p>Percentage</p>
+      </div>
+      <div class="css-unit vw" data-definition="css-unit vmin">
+        <p>Viewport Width</p>
+      </div>
+      <div class="css-unit dvw" data-definition="css-unit vmin">
+        <p>Dynamic Viewport Width</p>
+      </div>
+      <div class="css-unit dvb" data-definition="css-unit vmin">
+        <p>Dynamic Viewport Block</p>
+      </div>
+      <div class="css-unit dvi" data-definition="css-unit vmin">
+        <p>Dynamic Viewport Inline</p>
+      </div>
+      <div
+        class="css-unit vmin"
+        data-definition="phone that is 300px wide and 800px tall, vmin would represent the width of the viewport."
+      >
+        <p>VMin</p>
+      </div>
+      <div
+        class="css-unit vmax"
+        data-definition="a phone that is 300px wide and 800px tall, vmax would represent the height of the device."
+      >
+        <p>VMax</p>
+      </div>
+    </div>
+  </body>
+</html>
